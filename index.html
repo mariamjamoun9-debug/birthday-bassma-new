@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Basma 🎀</title>
+<!-- Fonts: Pinyon Script (headings) + Quicksand (body). Fallbacks are set in style.css -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Dreamy background: ribbons + floating particles (filled by script.js) -->
+<div class="bg" aria-hidden="true">
+  <div class="ribbon r1"></div><div class="ribbon r2"></div>
+  <div id="ambient"></div>
+</div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<!-- Music: add music/birthday.mp3 to enable. Never autoplays. -->
+<audio id="music" loop preload="none"><source src="music/birthday.mp3" type="audio/mpeg"></audio>
+<button class="music" id="music-btn" aria-label="Play music" aria-pressed="false">🎵</button>
+<div class="toast" id="toast" role="status"></div>
+
+<main>
+  <!-- EXPERIENCE 1: gift -->
+  <section id="gift" class="scene active" aria-labelledby="gift-h">
+    <div class="giftbox" id="giftbox" aria-hidden="true">
+      <span class="glow"></span><span class="lid"><i class="bow"></i></span><span class="base"></span>
+    </div>
+    <h1 id="gift-h" class="script">Something special is waiting for you, Basma... 🎀</h1>
+    <button class="btn" id="open">Open Your Surprise 💗</button>
+  </section>
+
+  <!-- EXPERIENCE 2: yes / no game -->
+  <section id="game" class="scene" aria-labelledby="q">
+    <div class="card glass">
+      <p class="count" id="count" aria-live="polite">NO clicks: 0</p>
+      <div id="play">
+        <h2 id="q" class="script">Basmaaa, do you love me? 🥹💕</h2>
+        <p id="msg" class="msg" aria-live="polite">Choose wisely…</p>
+        <div class="btns" id="btns">
+          <button class="btn yes" id="yes">YESSS 💖</button>
+          <button class="btn no" id="no">NO 🙄</button>
+        </div>
+      </div>
+      <div id="win" class="win" hidden>
+        <div class="beat" aria-hidden="true">💖</div>
+        <h2 tabindex="-1">I KNEW ITTT, BASMA! 💗 YOU HAVE THE BEST TASTE!</h2>
+        <button class="btn" id="toBday">Let’s Celebrate 🎂</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE 3: birthday reveal -->
+  <section id="bday" class="scene" aria-labelledby="bh">
+    <h1 id="bh" class="script big">Happy Birthday, Basma! <span class="em">🎂💗</span></h1>
+    <p class="sub">Today is all about YOU, my beautiful girl! 🎀✨</p>
+
+    <button class="cake" id="cake" aria-label="Birthday cake. Press to blow out or relight the candles">
+      <span class="candles"><span class="candle"><i class="flame"></i></span><span class="candle"><i class="flame"></i></span><span class="candle"><i class="flame"></i></span></span>
+      <span class="t t3"></span><span class="t t2"></span><span class="t t1"></span><span class="plate"></span>
+    </button>
+    <p class="hint">Tap the cake to blow out the candles 🕯️</p>
+
+    <div class="countdown" id="cd" aria-live="polite"></div>
+
+    <article class="card glass letter" id="letter" title="Tap to skip the typing">
+      <p id="type"></p>
+    </article>
+
+    <button class="btn" id="surprise">One Last Surprise 🎁</button>
+  </section>
+
+  <!-- EXPERIENCE 4: secret surprise -->
+  <section class="secret" id="secret" hidden aria-labelledby="sm" role="dialog" aria-modal="true">
+    <div id="petals" aria-hidden="true"></div>
+    <div class="sc">
+      <p id="sm" class="script"></p>
+      <p class="sig script" id="sig">Made with love, just for you — from your bestie 💌</p>
+      <button class="btn" id="back">Back to the party 🎈</button>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
